@@ -1,4 +1,4 @@
-![Luna](https://github.com/SalZaki/Luna/blob/main/assests/Luna.png)
+<img src="https://github.com/SalZaki/Luna/blob/main/assests/Luna.png" width="40%" height="40%">
 
 # Table of contents
 
@@ -25,7 +25,7 @@ Luna is aiming higher in 2022, and embarking on a ambitious project to modernise
 
 As the new payment platform is designed to be **API First** and RESTful, Luna's engineering team has decided to implement a microservices-based architecture which uses most common cloud native technologies (cloud-agnostic approach, containerization mechanism, container orchestration and so on) for this platform.
 
-##Design Approach
+## Design Approach
 Lu na's engineering team tried to tackle this challenge by adapting following design approach and mindset, 
 
 ### Don’t surprise users
