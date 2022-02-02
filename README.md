@@ -1,8 +1,8 @@
-<img src="https://github.com/SalZaki/Luna/blob/main/assests/Luna.png" width="25%" height="25%">
+<img src="https://github.com/SalZaki/Luna/blob/main/assests/Luna.png" width="20%" height="20%">
 
 # Table of contents
 
-- [What is Luna](##What is Luna)
+- [What is Luna](#Luna)
 - [Overview](##Overview)
 - [Requirements](##Requirements)
 - [Architecture](##Architecture)
@@ -13,6 +13,7 @@
   - [Payment Network](###Payment Network)
   - [3rd Party Bank](####3rd Party Bank])
 
+<a name="luna"/>
 # What is Luna
 
 Luna is a fictitious financial services and software as a service company, with offices around the globe. The company primarily offers payment processing software and application programming interfaces for e-commerce websites and mobile applications.
