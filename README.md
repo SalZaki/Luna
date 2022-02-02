@@ -1,8 +1,6 @@
-![Luna](https://github.com/salzaki/Luna/raw/main/assests/luna.png) 
+![Luna](https://github.com/SalZaki/Luna/blob/main/assests/Luna.png)
 
 # Table of contents
-
-----------------
 
 - [What is Luna](##What is Luna)
 - [Overview](##Overview)
@@ -124,8 +122,6 @@ TBA
 - Clone the repository using the command git clone https://github.com/SalZaki/Luna.git and checkout the main branch.
 
 ## How to start the solution?
-
-----------------
 
 Open `Luna` directory and execute:
 
