@@ -1,4 +1,4 @@
-![Luna](https://github.com/salzaki/Luna/raw/main/assets/luna.png) 
+![Luna](https://github.com/salzaki/Luna/raw/main/assests/luna.png) 
 
 # Table of contents
 
@@ -17,7 +17,6 @@
 
 # What is Luna
 
-----------------
 Luna is a fictitious financial services and software as a service company, with offices around the globe. The company primarily offers payment processing software and application programming interfaces for e-commerce websites and mobile applications.
 
 > **Luna** is an Italian and Spanish given name of Latin origin. It means Moon in English.
@@ -25,8 +24,6 @@ Luna is a fictitious financial services and software as a service company, with 
 Luna is aiming higher in 2022, and embarking on a ambitious project to modernise their payment platform, by designing it be as API first platform and delivering value with their API to enterprise developer partners.
 
 # Overview
-
-----------------
 
 As the new payment platform is designed to be **API First** and RESTful, Luna's engineering team has decided to implement a microservices-based architecture which uses most common cloud native technologies (cloud-agnostic approach, containerization mechanism, container orchestration and so on) for this platform.
 
@@ -50,14 +47,11 @@ Again, it’s worth reiterating here that a great developer experience is the nu
 
 ## Requirements
 
-----------------
-
 Process payment requests
 
 
 ## Architecture
 
-----------------
 One of the key principles in employing a microservices-based architecture is Divide and Conquer. The decomposition of the system into discrete and isolated subsystems communicating over well-defined protocols.
 
 Isolation is a prerequisite for resilience and elasticity and requires asynchronous communication boundaries between services to decouple them in,
@@ -126,8 +120,6 @@ TBA
 ```
 
 ## Getting Started
-
-----------------
 
 - Clone the repository using the command git clone https://github.com/SalZaki/Luna.git and checkout the main branch.
 
