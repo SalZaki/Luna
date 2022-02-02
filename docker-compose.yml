@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+
+  3rdPartyBankApi:
+    image: 3rd-party-bank
+    container_name: 3rd-party-bank-api
+    build:
+      context: .
+      dockerfile: 3rd-party-bank/src/AcquirerBank/Dockerfile
+    ports:
+      - 9100:80
+      - 9101:443
+    networks:
+      - luna_network
+
+  LunaPaymentApi:
+    image: luna-payment-api
+    container_name: luna-payment-api
+    build:
+      context: .
+      dockerfile: payment/src/Luna.Services.Payment.Api/Dockerfile
+    ports:
+      - 8100:80
+      - 8101:443
+    networks:
+      - luna_network
+
+networks:
+  luna_network:
+    driver: bridge
