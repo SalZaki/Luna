@@ -1,4 +1,4 @@
-<img src="https://github.com/SalZaki/Luna/blob/main/assests/Luna.png" width="40%" height="40%">
+<img src="https://github.com/SalZaki/Luna/blob/main/assests/Luna.png" width="25%" height="25%">
 
 # Table of contents
 
