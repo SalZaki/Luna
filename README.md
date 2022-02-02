@@ -1,4 +1,4 @@
-![Luna](https://raw.githubusercontent.com/salzaki/Luna/master/assets/luna.png) 
+![Luna](https://raw.githubusercontent.com/salzaki/Luna/main/assets/luna.png) 
 
 #Table of contents
 
