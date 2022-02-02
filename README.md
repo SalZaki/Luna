@@ -139,11 +139,18 @@ Clone the repository using the command git clone https://github.com/SalZaki/Luna
 
 ## How to start the solution?
 
-Open `Luna` directory and execute:
+Open `luna` directory and execute:
 
 ```
 docker-compose -f up -d
 ```
+Then the following containers should be running on `docker ps`:
+
+| Application 	      | Docker Image          | URL                                                   |
+|-------------------- | --------------------- | ----------------------------------------------------- |
+| Luna Payment Api    | luna-payment-api      | http://localhost:8100                                |
+| 3rd Party Bank 	    | 3rd-party-bank        | http://localhost:9100                                |
+
 
 ### Test
 
