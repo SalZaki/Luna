@@ -35,43 +35,7 @@ builder.Services.AddCors(options =>
       .AllowCredentials());
 });
 
-// Swagger
-builder.Services.AddSwaggerGen(swagger =>
-{
-  swagger.OperationFilter<IdempotentKeyFilter>();
-
-  swagger.SwaggerDoc("v1", new OpenApiInfo
-  {
-    Title = "Luna Payment Api",
-    Version = "v1"
-  });
-
-  swagger.AddSecurityDefinition(Constants.RequestHeaderKeys.ApiKey, new OpenApiSecurityScheme
-  {
-    Name = Constants.RequestHeaderKeys.ApiKey,
-    In = ParameterLocation.Header,
-    Type = SecuritySchemeType.ApiKey,
-    Description = "Publicly known api key defined per Luna client and per Luna environment, i.e dev, sand-box or prd"
-  });
-
-  swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
-  {
-    {
-      new OpenApiSecurityScheme
-      {
-        Name = Constants.RequestHeaderKeys.ApiKey,
-        Type = SecuritySchemeType.ApiKey,
-        In = ParameterLocation.Header,
-        Reference = new OpenApiReference
-        {
-          Type = ReferenceType.SecurityScheme,
-          Id = Constants.RequestHeaderKeys.ApiKey
-        }
-      },
-      new [] {"NXyRtwK27y66shI"}
-    }
-  });
-});
+builder.Services.AddOpenApi(builder.Configuration);
 
 // Dependencies
 builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
@@ -102,6 +66,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 // Middlewares
 app.UseLoggingMiddleware();

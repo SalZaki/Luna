@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   3rdPartyBankApi:
-    image: 3rd-party-bank
+    image: 3rd-party-bank-api
     container_name: 3rd-party-bank-api
     build:
       context: .

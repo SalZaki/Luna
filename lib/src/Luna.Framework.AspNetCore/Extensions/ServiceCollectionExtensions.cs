@@ -1,8 +1,10 @@
 using System.Text.RegularExpressions;
 using Luna.Common.Infrastructure.Exceptions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 
 namespace Luna.Framework.AspNetCore.Extensions;
 
@@ -28,6 +30,82 @@ public static class ServiceCollectionExtensions
       });
 
     return services;
+  }
+
+  public static IServiceCollection AddOpenApi(this IServiceCollection services, IConfiguration config)
+  {
+    var apiSettings = config.GetApiSettings();
+
+    services.AddSwaggerGen(c =>
+    {
+      var provider = services.BuildServiceProvider().GetService<IApiVersionDescriptionProvider>();
+      foreach (var description in provider.ApiVersionDescriptions)
+      {
+        c.SwaggerDoc(
+          description.GroupName,
+          CreateInfoForApiVersion(description, apiSettings));
+      }
+
+      c.OperationFilter<IdempotentKeyFilter>();
+      c.EnableAnnotations();
+      c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+      c.AddSecurityDefinition(Constants.RequestHeaderKeys.ApiKey, new OpenApiSecurityScheme
+      {
+        Name = Constants.RequestHeaderKeys.ApiKey,
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Description =
+          "Publicly known api key defined per Luna client and per Luna environment, i.e dev, sand-box or prd"
+      });
+
+      c.AddSecurityRequirement(new OpenApiSecurityRequirement
+      {
+        {
+          new OpenApiSecurityScheme
+          {
+            Name = Constants.RequestHeaderKeys.ApiKey,
+            Type = SecuritySchemeType.ApiKey,
+            In = ParameterLocation.Header,
+            Reference = new OpenApiReference
+            {
+              Type = ReferenceType.SecurityScheme,
+              Id = Constants.RequestHeaderKeys.ApiKey
+            }
+          },
+          new[] {"NXyRtwK27y66shI"}
+        }
+      });
+    });
+
+    return services;
+  }
+
+  private static OpenApiInfo CreateInfoForApiVersion(ApiVersionDescription description, ApiSettings apiSettings)
+  {
+    var info = new OpenApiInfo
+    {
+      Title = $"{apiSettings.Title} {description.ApiVersion}",
+      Version = description.ApiVersion.ToString(),
+      Description = apiSettings.Description,
+      TermsOfService = apiSettings.TermOfServiceUrl,
+      Contact = new OpenApiContact
+      {
+        Name = apiSettings.ContactName,
+        Email = apiSettings.ContactEmail,
+      },
+      License = new OpenApiLicense
+      {
+        Name = apiSettings.LicenseName,
+        Url = apiSettings.LicenseUrl
+      }
+    };
+
+    if (description.IsDeprecated)
+    {
+      info.Description += " This API version has been deprecated.";
+    }
+
+    return info;
   }
 
   public static IServiceCollection AddApiSettings(this IServiceCollection services, IConfiguration config)

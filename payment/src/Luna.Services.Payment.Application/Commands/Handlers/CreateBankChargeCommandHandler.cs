@@ -2,25 +2,20 @@ using Luna.Framework.AspNetCore;
 using Luna.Services.Payment.Application.Dtos;
 using Luna.Services.Payment.Application.Services;
 using MediatR;
-using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
 
 namespace Luna.Services.Payment.Application.Commands.Handlers;
 
 public class CreateBankChargeCommandHandler : IRequestHandler<CreateBankChargeCommand, BankResponseDto>
 {
-  private readonly ApiSettings _apiSettings;
-
   private readonly IAcquirerBankApiClient _acquirerBankApiClient;
 
   private readonly ILogger _logger;
 
   public CreateBankChargeCommandHandler(
-    IOptions<ApiSettings> apiSettingsOptions,
     IAcquirerBankApiClient acquirerBankApiClient,
     ILoggerFactory loggerFactory)
   {
-    _apiSettings = apiSettingsOptions.Value;
     _acquirerBankApiClient = acquirerBankApiClient;
     _logger = loggerFactory.CreateLogger<CreateBankChargeCommandHandler>();
   }

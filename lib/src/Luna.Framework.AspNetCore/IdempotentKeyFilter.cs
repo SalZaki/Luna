@@ -1,9 +1,8 @@
-using Luna.Framework.AspNetCore;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 
-namespace Luna.Services.Payment.Api;
+namespace Luna.Framework.AspNetCore;
 
 public class IdempotentKeyFilter : IOperationFilter
 {

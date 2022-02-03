@@ -6,7 +6,7 @@ namespace Luna.Framework.AspNetCore;
 public class HttpClientSettings
 {
   public string Name { get; set; }
-  
+
   public EndPoint[] Endpoints { get; set; } = Array.Empty<EndPoint>();
 
   public string BaseAddress { get; set; }
@@ -20,6 +20,8 @@ public class HttpClientSettings
   public int CircuitBreakerFailurePeriodInMin { get; set; } = 1;
 
   public int[] RetryTimeSpansInSec { get; set; } = { 1, 3, 5 };
+
+  public double TransactionCostPercentage { get; set; } = 0.025;
 }
 
 [ExcludeFromCodeCoverage]
