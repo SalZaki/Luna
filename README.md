@@ -1,4 +1,4 @@
-<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-logo.png" width="20%" height="20%">
+<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-logo.png" width="25%" height="25%">
 
 # Table of contents
 
@@ -366,7 +366,7 @@ $ npm run test:cov
 
 ## Further Development and Architecture
 
-<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-architecture.png" width="85%" height="85%">
+<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-architecture.png" width="100%" height="100%">
 
 <a name="development-tools"/>
 
