@@ -1,5 +1,4 @@
-﻿using Luna.Services.Payment.Application.Data;
-using Luna.Services.Payment.Infrastructure.Data.SchemaDefinitions;
+﻿using Luna.Services.Payment.Infrastructure.Data.SchemaDefinitions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Luna.Services.Payment.Infrastructure.Data;
