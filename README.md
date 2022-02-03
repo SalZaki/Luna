@@ -76,7 +76,7 @@ Isolation is a prerequisite for resilience and elasticity and requires asynchron
 
 When adopting Microservices, it is also essential to eliminate shared mutable state and thereby minimize coordination, contention and coherency cost, as defined in the Universal Scalability Law2 by embracing a Share-Nothing Architecture.
 
-<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-ms-layered-architecture.png" width="50%" height="50%">
+<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-ms-layered-architecture.png">
 
 ### Solution Structure
 
