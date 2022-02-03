@@ -314,8 +314,8 @@ When ever a fault has occuered, api will send a response with documentation url,
   "DocumentationUrl": "https://api.payment.luna.com/v1/documentation/payments/30001",
   "title": "Access Denied",
   "status": 401,
-  "detail": "You do not have permission to perform this action or access this resource. Api key does not exist or 
-  is invalid in request header.",
+  "detail": "You do not have permission to perform this action or access this resource. 
+  Api key does not exist or is invalid in request header.",
 }
 ```
 
