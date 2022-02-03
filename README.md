@@ -22,6 +22,7 @@
   - [How to start solution](#start-solution)
 - [Test](#test)
 - [Further Development and Architecture](#further)
+- [Frameworks Used"/>](#frameworks-used)
 - [Development Tools](#development-tools)
 - [Fun Qoutes](#fun-qoutes)
 
@@ -367,6 +368,16 @@ $ npm run test:cov
 ## Further Development and Architecture
 
 <img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-architecture.png" width="100%" height="100%">
+
+<a name="frameworks-used"/>
+
+## Frameworks Used
+
+- MediatR
+- Fluent Validation
+- Polly
+- Swashbuckle
+
 
 <a name="development-tools"/>
 
