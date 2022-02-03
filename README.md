@@ -179,7 +179,29 @@ Luna Payment api is build with following features
       "MaskTemplate": "*"
     }
   }
+
 ```
+
+```json
+  "HttpClientSettings": {
+    "Name": "AcquirerBankApiClient",
+    "BaseAddress": "http://localhost:9100/",
+    "EndPoints": [
+      {
+        "Name": "Charge",
+        "Url": "api/charge"
+      }
+    ],
+    "TransactionCostPercentage" : 0.05,
+    "CacheExpirationInMin": "15",
+    "CacheKey": "acquirer-bank-cache-{0}",
+    "NumberOfExceptionsBeforeCircuitBreaker": 20,
+    "CircuitBreakerFailurePeriodInMin": 1,
+    "RetryTimeSpansInSec": [ 1, 3, 5 ]
+  }
+```
+
+
 <a name="api-key"/>
 
 #### Api key
