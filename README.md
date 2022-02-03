@@ -215,7 +215,7 @@ Please use following api key as this is a must, when using Luna Payment Api,
 
 #### Example Post Request Header
 
-<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-api-request-header.png" width="35%" height="35%">
+<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-api-request-header.png" width="100%" height="100%">
 
 <a name="example-request-body"/>
 
