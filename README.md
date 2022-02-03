@@ -1,4 +1,4 @@
-<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-logo.png" width="15%" height="15%">
+<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-logo.png" width="20%" height="20%">
 
 # Table of contents
 
@@ -113,7 +113,7 @@ TBA
 
 ### Microservice Architecture
 
-<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-ms-architecture.png" width="15%" height="15%">
+<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-ms-architecture.png" width="30%" height="30%">
 
 <a name="payment-api"/>
 
@@ -215,7 +215,7 @@ Please use following api key as this is a must, when using Luna Payment Api,
 
 #### Example Post Request Header
 
-<img src="https://github.com/SalZaki/Luna/blob/main/assests/luna-api-request-header" width="15%" height="15%">
+<img src="https://github.com/SalZaki/Luna/blob/main/assests/luna-api-request-header.png" width="25%" height="25%">
 
 <a name="example-request-body"/>
 
@@ -304,7 +304,7 @@ Please use following example post request in either Postman or Swagger,
 <a name="faulted-post-response"/>
 
 #### Example Faulted Post Response
-When ever a fault has occuered, api will send a response with documentation url, which will direct cleints to fix the issue with their request, as shown below,
+When ever a fault has occuered, api will send a response with documentation url, which will direct clients to fix the issue with their request, as shown below,
 
 ##### Response body
 
@@ -366,7 +366,7 @@ $ npm run test:cov
 
 ## Further Development and Architecture
 
-<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-architecture.png" width="15%" height="15%">
+<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-architecture.png" width="45%" height="45%">
 
 <a name="development-tools"/>
 
