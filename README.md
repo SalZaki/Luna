@@ -22,7 +22,7 @@
   - [How to start solution](#start-solution)
 - [Test](#test)
 - [Further Development and Architecture](#further)
-- [Frameworks Used"/>](#frameworks-used)
+- [Frameworks Used](#frameworks-used)
 - [Development Tools](#development-tools)
 - [Fun Qoutes](#fun-qoutes)
 
