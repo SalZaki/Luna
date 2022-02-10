@@ -92,6 +92,8 @@ public sealed class CreatePaymentCommandHandler : IRequestHandler<CreatePaymentC
 
     _logger.Log(LogLevel.Debug, $"Finished handling {nameof(CreatePaymentCommand)}: {command}");
 
+    if (response == null) return null;
+    
     //TODO Add Automapper
     return new PaymentDto
     {

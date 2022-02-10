@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Luna.Services.Payment.Application.Commands.Validators;
 
-public sealed  class CreatePaymentCommandValidator : AbstractValidator<CreatePaymentCommand>
+public sealed class CreatePaymentCommandValidator : AbstractValidator<CreatePaymentCommand>
 {
   public CreatePaymentCommandValidator()
   {

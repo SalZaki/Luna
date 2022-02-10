@@ -16,13 +16,13 @@ public class CreateBankChargeCommandHandler : IRequestHandler<CreateBankChargeCo
     IAcquirerBankApiClient acquirerBankApiClient,
     ILoggerFactory loggerFactory)
   {
-    _acquirerBankApiClient = acquirerBankApiClient;
+    _acquirerBankApiClient = acquirerBankApiClient ?? throw new ArgumentNullException(nameof(acquirerBankApiClient));
     _logger = loggerFactory.CreateLogger<CreateBankChargeCommandHandler>();
   }
 
   public async Task<BankResponseDto> Handle(CreateBankChargeCommand command, CancellationToken cancellationToken)
   {
-    //TODO Add command validator
+    //TODO Add bank charge command validator
     _logger.Log(LogLevel.Debug, $"Started handling {nameof(CreateBankChargeCommand)}: {command}");
 
     //TODO Add AutoMapper

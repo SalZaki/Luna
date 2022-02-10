@@ -1,8 +1,10 @@
+using System.Diagnostics.CodeAnalysis;
 using Luna.Services.Payment.Application.Dtos;
 using MediatR;
 
 namespace Luna.Services.Payment.Application.Commands;
 
+[ExcludeFromCodeCoverage]
 public class CreatePaymentCommand : IRequest<PaymentDto>
 {
   public Guid IdempotentKey { get; set; }

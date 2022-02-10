@@ -24,15 +24,15 @@ public sealed class PaymentsController : LunaControllerBase
   private readonly IApiKeyResolver _apiKeyResolver;
 
   public PaymentsController(
-    IMediator mediator,
     IOptions<ApiSettings> apiSettingsOption,
+    IMediator mediator,
+    ILoggerFactory loggerFactory,
     IIdempotentKeyResolver idempotentKeyResolver,
-    IApiKeyResolver apiKeyResolver,
-    ILoggerFactory factory)
-    : base(apiSettingsOption, mediator, factory.CreateLogger<InfoController>())
+    IApiKeyResolver apiKeyResolver)
+    : base(apiSettingsOption, mediator, loggerFactory.CreateLogger<PaymentsController>())
   {
-    _idempotentKeyResolver = idempotentKeyResolver;
-    _apiKeyResolver = apiKeyResolver;
+    _idempotentKeyResolver = idempotentKeyResolver ?? throw new ArgumentNullException(nameof(idempotentKeyResolver));
+    _apiKeyResolver = apiKeyResolver ?? throw new ArgumentNullException(nameof(apiKeyResolver));
   }
 
   [HttpGet]
@@ -52,6 +52,8 @@ public sealed class PaymentsController : LunaControllerBase
     };
 
     var response = await Mediator.Send(query, cancellationToken);
+
+    Logger.Log(LogLevel.Information, $"Gets a single immediate payment with id: {response?.Id}");
 
     return Ok(new ResponseDto<PaymentDto>
     {
@@ -91,9 +93,9 @@ public sealed class PaymentsController : LunaControllerBase
 
     var response = await Mediator.Send(command, cancellationToken);
 
-    Logger.Log(LogLevel.Information, $"Created a single immediate payment with Id: {response.Id}");
+    Logger.Log(LogLevel.Information, $"Created a single immediate payment with id: {response.Id}");
 
-    var location = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/v1/payment/{response.Id}";
+    var location = $"{HttpContext?.Request?.Scheme}://{HttpContext?.Request?.Host}/v1/payment/{response?.Id}";
 
     return Created(location, new ResponseDto<PaymentDto>
     {
