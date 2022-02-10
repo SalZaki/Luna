@@ -3,7 +3,7 @@
 namespace Luna.Framework.AspNetCore;
 
 [ExcludeFromCodeCoverage]
-public class ApiSettings
+public sealed class ApiSettings
 {
   public string? Name { get; set; }
 
@@ -53,5 +53,5 @@ public class ApiSettings
 public class RequestMasking
 {
   public bool Enabled { get; set; } = true;
-  public string? MaskTemplate { get; set; } = "*********";
+  public string? MaskTemplate { get; set; } = "*";
 }

@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Routing;
 
 namespace Luna.Framework.AspNetCore.Middlewares;
 
-internal sealed class ExceptionHandlingMiddleware
+public sealed class ExceptionHandlingMiddleware
 {
   private readonly ApiSettings _apiSettings;
 
@@ -47,7 +47,8 @@ internal sealed class ExceptionHandlingMiddleware
   private async Task HandleExceptionAsync(HttpContext context, Exception ex)
   {
     var routeData = context.GetRouteData();
-    var controllerName = routeData.Values["controller"].ToString()?.ToLowerInvariant();
+    if(routeData == null) return;
+    var controllerName = routeData.Values["controller"]?.ToString().ToLowerInvariant();
     var problemDetails = CreateProblemDetails(ex, controllerName);
 
     var response = context.Response;
