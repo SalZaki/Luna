@@ -113,8 +113,9 @@ When adopting Microservices, it is also essential to eliminate shared mutable st
 ## Microservices
 
 ### Microservice Architecture
-
-<img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-ms-architecture.png" width="50%" height="50%">
+<p align="center">
+  <img src="https://github.com/SalZaki/Luna/blob/main/assets/luna-ms-architecture.png" width="50%" height="50%">
+</p>
 
 <a name="payment-api"/>
 
